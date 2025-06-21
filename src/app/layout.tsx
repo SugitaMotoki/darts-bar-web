@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Container, Navbar, NavbarBrand } from "react-bootstrap";
+// import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,10 +25,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar className="bg-body-secondary">
+          <Container>
+            <NavbarBrand>
+              {/* <Image
+                className="dark:invert"
+                src="/next.svg"
+                alt="Next.js logo"
+                width={90}
+                height={30}
+                priority
+              /> */}
+              <h1 className="m-0">MY DARTS</h1>
+            </NavbarBrand>
+          </Container>
+        </Navbar>
         {children}
       </body>
     </html>
